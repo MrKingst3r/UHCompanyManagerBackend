@@ -6,7 +6,7 @@ This project uses NodeJS, VUEJS and MongoDB.
 ```
 cd backend
 ```
-Follow instructions in backend README for setup and running as a local instance.
+Follow instructions in backend-README for setup and running as a local instance.
 
 ## Frontend Vue 3 Application
 ```
