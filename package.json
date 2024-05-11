@@ -4,6 +4,7 @@
   "description": "Dataplatform backend API",
   "main": "app.js",
   "scripts": {
+    "prestart": "npm install",
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon app.js",
     "client": "cd ./frontend && npm start"
