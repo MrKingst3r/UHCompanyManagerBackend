@@ -4,6 +4,7 @@
   "description": "Dataplatform backend API",
   "main": "app.js",
   "scripts": {
+    "prestart": "npm install",
     "start": "nodemon app.js"
   },
   "dependencies": {
