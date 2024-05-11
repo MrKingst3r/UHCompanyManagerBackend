@@ -5,9 +5,7 @@
   "main": "app.js",
   "scripts": {
     "prestart": "npm install",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon app.js",
-    "client": "cd ./frontend && npm start"
+    "start": "nodemon app.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -17,11 +15,10 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.7.0",
     "morgan": "^1.10.0",
+    "nodemon": "^3.1.0",
     "prettier-eslint": "^16.1.2",
     "uuid": "^9.0.0",
-    "vue-eslint-parser": "^8.0.0",
-    "concurrently": "^8.2.2",
-    "nodemon": "^3.1.0"
+    "vue-eslint-parser": "^8.0.0"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
