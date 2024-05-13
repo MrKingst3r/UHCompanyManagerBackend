@@ -5,6 +5,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const path = require('path');
 
 const cors = require('cors');
 // allow using a .env file
@@ -34,7 +35,7 @@ mongoose
   });
 
 // declare port number for the api
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // setup and access request body
 app.use(express.json());
