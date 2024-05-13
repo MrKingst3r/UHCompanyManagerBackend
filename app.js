@@ -47,6 +47,9 @@ app.use('/org', require('./routes/org'));
 app.use('/services', require('./routes/services'));
 app.use('/users', require('./routes/users'));
 
+// Serve the Vue.js frontend
+app.use(express.static(path.join(__dirname, 'dist')));
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
