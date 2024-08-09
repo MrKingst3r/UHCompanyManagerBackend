@@ -17,7 +17,7 @@ const app = express();
 // add cors header to the server
 app.use(
   cors({
-    origin: 'https://uh.trentsdemos.com', // Replace with your actual domain
+    origin: '*', // Replace with your actual domain
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
@@ -52,6 +52,11 @@ app.use('/users', require('./routes/users'));
 
 // Serve the Vue.js frontend
 app.use(express.static(path.join(__dirname, 'dist')));
+
+// Catch-all route to handle client-side routing in an SPA
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
