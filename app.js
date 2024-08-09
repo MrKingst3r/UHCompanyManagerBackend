@@ -53,11 +53,6 @@ app.use('/users', require('./routes/users'));
 // Serve the Vue.js frontend
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Catch-all route to handle client-side routing in an SPA
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
-
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
