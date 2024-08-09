@@ -17,7 +17,9 @@ const app = express();
 // add cors header to the server
 app.use(
   cors({
-    origin: '*'
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 
