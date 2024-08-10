@@ -17,9 +17,11 @@ const app = express();
 // add cors header to the server
 app.use(
   cors({
-    origin: '*', // Replace with your actual domain
+    origin: '*'
   })
 );
+
+app.options('*', cors());
 
 // suppress mongoose warning to prepare for new version
 mongoose.set('strictQuery', false);
