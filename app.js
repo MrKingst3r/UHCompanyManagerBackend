@@ -51,7 +51,7 @@ app.use('/users', require('./routes/users'));
 // Serve static files from the Vue.js app
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server listening on port ${PORT}`);
 });
 
