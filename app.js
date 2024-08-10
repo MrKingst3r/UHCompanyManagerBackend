@@ -17,7 +17,7 @@ const app = express();
 // add cors header to the server
 app.use(
   cors({
-    origin: 'https://uh.trentsdemos.com', // Replace with your actual domain
+    origin: '*', // Replace with your actual domain
   })
 );
 
