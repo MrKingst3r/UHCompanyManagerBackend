@@ -17,11 +17,10 @@ const app = express();
 // add cors header to the server
 app.use(
   cors({
-    origin: '*'
+    origin: 'http://localhost:5173',
+    credentials: true,
   })
 );
-
-app.options('*', cors());
 
 // suppress mongoose warning to prepare for new version
 mongoose.set('strictQuery', false);
