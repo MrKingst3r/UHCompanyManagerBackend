@@ -17,8 +17,7 @@ const app = express();
 // add cors header to the server
 app.use(
   cors({
-    origin: 'http://localhost:5173',
-    credentials: true,
+    origin: '*'
   })
 );
 
