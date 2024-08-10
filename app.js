@@ -7,19 +7,24 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const path = require('path');
 
-const cors = require('cors');
+// const cors = require('cors');
 // allow using a .env file
 require('dotenv').config(); //require the dotenv
 
 // creates a new instance of express application
 const app = express();
 
-// add cors header to the server
-app.use(
-  cors({
-    origin: '*', // Replace with your actual domain
-  })
-);
+// Custom middleware to set CORS headers
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://uh.trentsdemos.com'); // Allow specific origin
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS'); // Allowed methods
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Allowed headers
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  next();
+});
 
 // suppress mongoose warning to prepare for new version
 mongoose.set('strictQuery', false);
