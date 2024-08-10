@@ -17,16 +17,9 @@ const app = express();
 // add cors header to the server
 app.use(
   cors({
-    origin: 'https://uh.trentsdemos.com', // Replace with your actual domain
+    origin: '*', // Replace with your actual domain
   })
 );
-
-app.options('*', (req, res) => {
-  res.header('Access-Control-Allow-Origin', 'https://uh.trentsdemos.com');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.send();
-});
 
 // suppress mongoose warning to prepare for new version
 mongoose.set('strictQuery', false);
