@@ -7,19 +7,11 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const path = require('path');
 
-const cors = require('cors');
 // allow using a .env file
 require('dotenv').config(); //require the dotenv
 
 // creates a new instance of express application
 const app = express();
-
-// add cors header to the server
-app.use(
-  cors({
-    origin: '*'
-  })
-);
 
 // suppress mongoose warning to prepare for new version
 mongoose.set('strictQuery', false);
@@ -51,7 +43,7 @@ app.use('/users', require('./routes/users'));
 // Serve static files from the Vue.js app
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.listen(PORT, "0.0.0.0", () => {
+app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
 
