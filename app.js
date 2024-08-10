@@ -7,11 +7,19 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const path = require('path');
 
+const cors = require('cors');
 // allow using a .env file
 require('dotenv').config(); //require the dotenv
 
 // creates a new instance of express application
 const app = express();
+
+// add cors header to the server
+app.use(
+  cors({
+    origin: '*',
+  })
+);
 
 // suppress mongoose warning to prepare for new version
 mongoose.set('strictQuery', false);
