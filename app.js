@@ -44,17 +44,12 @@ app.use(morgan('dev'));
 // setup middle ware for routes
 app.use('/clients', require('./routes/clients'));
 app.use('/events', require('./routes/events'));
-app.use('/org', require('./routes/org'));
+app.use('/org', require('./routes/org'));  
 app.use('/services', require('./routes/services'));
 app.use('/users', require('./routes/users'));
 
 // Serve static files from the Vue.js app
 app.use(express.static(path.join(__dirname, 'dist')));
-
-// For any route that doesn’t match the API routes, serve the Vue.js app
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
